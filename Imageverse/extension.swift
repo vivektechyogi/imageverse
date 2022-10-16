@@ -15,6 +15,15 @@ extension UIView {
         self.clipsToBounds = true
         self.layer.masksToBounds = true
     }
+    
+    func setBorder(radius:CGFloat, color:UIColor = UIColor.clear, width: CGFloat = 1) -> UIView{
+        var roundView:UIView = self
+        roundView.layer.cornerRadius = CGFloat(radius)
+        roundView.layer.borderWidth = width
+        roundView.layer.borderColor = color.cgColor
+        roundView.clipsToBounds = true
+        return roundView
+    }
 }
 
 //Extension for setting image to image view using kingfisher, will set placeholderimage and loader until the image is dowloading.
@@ -51,5 +60,28 @@ extension UICollectionView {
 
     func restore() {
         self.backgroundView = nil
+    }
+}
+
+class CustomViewFlowLayout: UICollectionViewFlowLayout {
+
+let cellSpacing:CGFloat = 4
+
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+            self.minimumLineSpacing = 4.0
+            self.sectionInset = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 6)
+            let attributes = super.layoutAttributesForElements(in: rect)
+
+            var leftMargin = sectionInset.left
+            var maxY: CGFloat = -1.0
+            attributes?.forEach { layoutAttribute in
+                if layoutAttribute.frame.origin.y >= maxY {
+                    leftMargin = sectionInset.left
+                }
+                layoutAttribute.frame.origin.x = leftMargin
+                leftMargin += layoutAttribute.frame.width + cellSpacing
+                maxY = max(layoutAttribute.frame.maxY , maxY)
+            }
+            return attributes
     }
 }
