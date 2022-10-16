@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		320AAA0128FC16B700EC7C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AAA0028FC16B700EC7C8A /* AppDelegate.swift */; };
 		320AAA0328FC16B700EC7C8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AAA0228FC16B700EC7C8A /* SceneDelegate.swift */; };
-		320AAA0528FC16B700EC7C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AAA0428FC16B700EC7C8A /* ViewController.swift */; };
+		320AAA0528FC16B700EC7C8A /* ImageListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AAA0428FC16B700EC7C8A /* ImageListVC.swift */; };
 		320AAA0828FC16B700EC7C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320AAA0628FC16B700EC7C8A /* Main.storyboard */; };
 		320AAA0A28FC16BC00EC7C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320AAA0928FC16BC00EC7C8A /* Assets.xcassets */; };
 		320AAA0D28FC16BC00EC7C8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320AAA0B28FC16BC00EC7C8A /* LaunchScreen.storyboard */; };
 		32B17EBB28FC287700482C4F /* imageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17EBA28FC287700482C4F /* imageCellView.swift */; };
+		32B17EBE28FC2B4E00482C4F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 32B17EBD28FC2B4E00482C4F /* Kingfisher */; };
+		32B17EC128FC2B6700482C4F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32B17EC028FC2B6700482C4F /* Alamofire */; };
+		32B17EC328FC3A7900482C4F /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17EC228FC3A7900482C4F /* SearchVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		320AA9FD28FC16B700EC7C8A /* Imageverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imageverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		320AAA0028FC16B700EC7C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		320AAA0228FC16B700EC7C8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		320AAA0428FC16B700EC7C8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		320AAA0428FC16B700EC7C8A /* ImageListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListVC.swift; sourceTree = "<group>"; };
 		320AAA0728FC16B700EC7C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		320AAA0928FC16BC00EC7C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		320AAA0C28FC16BC00EC7C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		320AAA0E28FC16BC00EC7C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32B17EBA28FC287700482C4F /* imageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = imageCellView.swift; path = ../../../../Documents/imageCellView.swift; sourceTree = "<group>"; };
+		32B17EC228FC3A7900482C4F /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B17EBE28FC2B4E00482C4F /* Kingfisher in Frameworks */,
+				32B17EC128FC2B6700482C4F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,7 @@
 		320AA9FF28FC16B700EC7C8A /* Imageverse */ = {
 			isa = PBXGroup;
 			children = (
+				320AAA0E28FC16BC00EC7C8A /* Info.plist */,
 				320AAA2128FC1A3500EC7C8A /* supporting files */,
 				320AAA2028FC1A2B00EC7C8A /* delegates */,
 				320AAA1F28FC1A0800EC7C8A /* resources */,
@@ -87,7 +94,8 @@
 		320AAA1D28FC19E000EC7C8A /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
-				320AAA0428FC16B700EC7C8A /* ViewController.swift */,
+				320AAA0428FC16B700EC7C8A /* ImageListVC.swift */,
+				32B17EC228FC3A7900482C4F /* SearchVC.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -121,7 +129,6 @@
 		320AAA2128FC1A3500EC7C8A /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				320AAA0E28FC16BC00EC7C8A /* Info.plist */,
 			);
 			path = "supporting files";
 			sourceTree = "<group>";
@@ -142,6 +149,10 @@
 			dependencies = (
 			);
 			name = Imageverse;
+			packageProductDependencies = (
+				32B17EBD28FC2B4E00482C4F /* Kingfisher */,
+				32B17EC028FC2B6700482C4F /* Alamofire */,
+			);
 			productName = Imageverse;
 			productReference = 320AA9FD28FC16B700EC7C8A /* Imageverse.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +181,10 @@
 				Base,
 			);
 			mainGroup = 320AA9F428FC16B700EC7C8A;
+			packageReferences = (
+				32B17EBC28FC2B4E00482C4F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				32B17EBF28FC2B6700482C4F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 320AA9FE28FC16B700EC7C8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -198,7 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32B17EBB28FC287700482C4F /* imageCellView.swift in Sources */,
-				320AAA0528FC16B700EC7C8A /* ViewController.swift in Sources */,
+				32B17EC328FC3A7900482C4F /* SearchVC.swift in Sources */,
+				320AAA0528FC16B700EC7C8A /* ImageListVC.swift in Sources */,
 				320AAA0128FC16B700EC7C8A /* AppDelegate.swift in Sources */,
 				320AAA0328FC16B700EC7C8A /* SceneDelegate.swift in Sources */,
 			);
@@ -418,6 +434,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32B17EBC28FC2B4E00482C4F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		32B17EBF28FC2B6700482C4F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32B17EBD28FC2B4E00482C4F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32B17EBC28FC2B4E00482C4F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		32B17EC028FC2B6700482C4F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32B17EBF28FC2B6700482C4F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 320AA9F528FC16B700EC7C8A /* Project object */;
 }
