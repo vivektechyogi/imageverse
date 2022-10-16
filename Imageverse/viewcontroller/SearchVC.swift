@@ -8,22 +8,31 @@
 import UIKit
 
 class SearchVC: UIViewController {
-
+    
+    //MARK: Outlets
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    //this callback will be used as trigger then user enter some text and click search button
+    var callback : ((String?) -> Void)?
+    
+    //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        searchTextField.text = ""
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: ButtonActions
+    
+    @IBAction func searchButtonClicked(_ sender: Any) {
+        let text = searchTextField.text ?? ""
+        if text == ""{
+            return
+        }
+        self.dismiss(animated: true)
+        if let cb = callback {
+            cb(text)
+        }
     }
-    */
-
+    
 }

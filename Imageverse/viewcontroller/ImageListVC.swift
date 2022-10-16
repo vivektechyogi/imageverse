@@ -8,24 +8,54 @@
 import UIKit
 
 class ImageListVC: UIViewController {
-
+    
     //MARK: Outlets
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var toggleViewButton: UIButton!
     @IBOutlet weak var searchTextLabel: UILabel!
     
-    var isListView = false
+    var isListView = true
+    var imageData: [ImageData] = []
     
     //MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
-
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        openSearchView()
+    }
+    
+    //MARK: API Call to get image data
+    func getImageDataFor(text:String){
+        self.searchTextLabel.text = "Search result for \(text)"
+        APIManager.getImgaesForSearch(text: text).responseDecodable(of: ImageDataModel.self) { response in
+            
+            self.imageData = response.value?.data ?? []
+            self.imageCollectionView.reloadData()
+        }
+    }
+    
+    //to open search view where user can enter search text and view recent search
+    func openSearchView(){
+        let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        searchVC.callback = {
+            text in
+            self.getImageDataFor(text: text ?? "")
+        }
+        let nav = UINavigationController(rootViewController: searchVC)
+        nav.modalPresentationStyle = .pageSheet
+        if let sheet = nav.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        present(nav, animated: true, completion: nil)
+    }
+    
+    
     //MARK: Button Action
-
+    
     @IBAction func toggleButtonClicked(_ sender: Any) {
         toggleViewButton.setImage( UIImage.init(systemName: isListView ? "rectangle.grid.1x2.fill" : "square.grid.2x2.fill"), for: .normal)
         isListView = !isListView
@@ -33,36 +63,37 @@ class ImageListVC: UIViewController {
     }
     
     @IBAction func searchButtonClicked(_ sender: Any) {
-        
-        let detailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
-            let nav = UINavigationController(rootViewController: detailViewController)
-            // 1
-            nav.modalPresentationStyle = .pageSheet
-
-            if let sheet = nav.sheetPresentationController {
-
-                // 3
-                sheet.detents = [.medium()]
-
-            }
-            // 4
-            present(nav, animated: true, completion: nil)
+        openSearchView()
     }
     
 }
 
 //MARK: CollectionView Datasource and Delegate
 extension ImageListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        if (self.imageData.count == 0) {
+                collectionView.setEmptyMessage("Nothing to show :(")
+            } else {
+                collectionView.restore()
+            }
+        
+        return imageData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let imageData = imageData[indexPath.row]
         if isListView{
-            var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCellL", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCellL", for: indexPath) as! ImageCell
+            cell.roundCorners(20)
+            let url = imageData.images?.first?.link ?? ""
+            cell.imageView.setImage(url: url)
             return cell
         }else{
-            var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCellG", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCellG", for: indexPath) as! ImageCell
+            cell.roundCorners(20)
+            let url = imageData.images?.first?.link ?? ""
+            cell.imageView.setImage(url: url)
             return cell
         }
     }
@@ -70,9 +101,9 @@ extension ImageListVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if isListView{
-            return CGSize(width: (self.view.frame.size.width), height: 250)
+            return CGSize(width: (collectionView.frame.size.width), height: 200)
         }else{
-            return CGSize(width: (self.view.frame.size.width/2 - 20), height: 250)
+            return CGSize(width: (collectionView.frame.size.width/2 - 4), height: 250)
         }
     }
 }
