@@ -56,15 +56,71 @@
 		320AA9FF28FC16B700EC7C8A /* Imageverse */ = {
 			isa = PBXGroup;
 			children = (
-				320AAA0028FC16B700EC7C8A /* AppDelegate.swift */,
-				320AAA0228FC16B700EC7C8A /* SceneDelegate.swift */,
-				320AAA0428FC16B700EC7C8A /* ViewController.swift */,
-				320AAA0628FC16B700EC7C8A /* Main.storyboard */,
-				320AAA0928FC16BC00EC7C8A /* Assets.xcassets */,
-				320AAA0B28FC16BC00EC7C8A /* LaunchScreen.storyboard */,
-				320AAA0E28FC16BC00EC7C8A /* Info.plist */,
+				320AAA2128FC1A3500EC7C8A /* supporting files */,
+				320AAA2028FC1A2B00EC7C8A /* delegates */,
+				320AAA1F28FC1A0800EC7C8A /* resources */,
+				320AAA1E28FC19F800EC7C8A /* ui */,
+				320AAA1D28FC19E000EC7C8A /* viewcontroller */,
+				320AAA1C28FC19DB00EC7C8A /* views */,
+				320AAA1B28FC19C700EC7C8A /* model */,
 			);
 			path = Imageverse;
+			sourceTree = "<group>";
+		};
+		320AAA1B28FC19C700EC7C8A /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		320AAA1C28FC19DB00EC7C8A /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		320AAA1D28FC19E000EC7C8A /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				320AAA0428FC16B700EC7C8A /* ViewController.swift */,
+			);
+			path = viewcontroller;
+			sourceTree = "<group>";
+		};
+		320AAA1E28FC19F800EC7C8A /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				320AAA0628FC16B700EC7C8A /* Main.storyboard */,
+				320AAA0B28FC16BC00EC7C8A /* LaunchScreen.storyboard */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		320AAA1F28FC1A0800EC7C8A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				320AAA0928FC16BC00EC7C8A /* Assets.xcassets */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		320AAA2028FC1A2B00EC7C8A /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				320AAA0028FC16B700EC7C8A /* AppDelegate.swift */,
+				320AAA0228FC16B700EC7C8A /* SceneDelegate.swift */,
+			);
+			path = delegates;
+			sourceTree = "<group>";
+		};
+		320AAA2128FC1A3500EC7C8A /* supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				320AAA0E28FC16BC00EC7C8A /* Info.plist */,
+			);
+			path = "supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
