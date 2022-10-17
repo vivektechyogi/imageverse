@@ -25,6 +25,7 @@ extension UIView {
 }
 
 extension UIButton {
+    //change button image with  animation
     func changeImageAnimated(image: UIImage?) {
         guard let imageView = self.imageView, let currentImage = imageView.image, let newImage = image else {
             return
@@ -63,7 +64,7 @@ extension UIImageView {
                 case .success(let value):
                     print("Task done for: \(value.source.url?.absoluteString ?? "")")
                 case .failure(let error):
-                    self.image = UIImage(named: "filenotfound-image")
+                    self.image = UIImage(named: "placeholder-image")
                     print("❌❌❌❌❌❌❌❌❌❌❌❌Job failed: \(url) \(error.localizedDescription)")
                 }
             }
@@ -90,7 +91,9 @@ extension UICollectionView {
     }
 }
 
+
 extension Double {
+    //converts timestamp to string date format
     func getDateStringFromUnixTime() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yy HH:mm:a"
@@ -99,6 +102,7 @@ extension Double {
 }
 
 
+//Custom class for removing extara space between collection view cells used in search vc for chips
 class CustomViewFlowLayout: UICollectionViewFlowLayout {
     
     let cellSpacing:CGFloat = 4

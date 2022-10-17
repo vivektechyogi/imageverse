@@ -13,10 +13,9 @@ class BaseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
+    //acitivty indicator can we used on call where basevc is used
     func showActivityIndicator() {
         activityView = UIActivityIndicatorView(style: .large)
         activityView?.center = self.view.center
@@ -30,6 +29,7 @@ class BaseVC: UIViewController {
         }
     }
     
+    //showAlert can we used on call where basevc is used
     func showAlert(title: String?, message: String?) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             let alert = UIAlertController(title: title ?? "", message: message ?? "", preferredStyle: .alert)

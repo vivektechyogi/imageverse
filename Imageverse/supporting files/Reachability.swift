@@ -8,6 +8,7 @@
 import Foundation
 import SystemConfiguration
 
+//MARK: Reachability helps in getting user online status
 public class Reachability {
     
     private init() {

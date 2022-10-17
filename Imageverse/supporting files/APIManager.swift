@@ -19,7 +19,7 @@ public class APIManager: NSObject {
     static let headers: HTTPHeaders = [
         "Content-Type" : "application/json",
         "Accept" : "*/*",
-        "Authorization" : "Client-ID f0529cb8b324cd8"//01cb99b219f888a"
+        "Authorization" : "Client-ID f0529cb8b324cd8"
     ]
     
     
