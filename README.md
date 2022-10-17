@@ -3,6 +3,7 @@
 <img src="https://github.com/vivektechyogi/OutPuts/blob/main/Imageverse/fulllogo.png" height="120" width="120" >
 
 Application that searches for the top images of the week from the Imgur gallery and displays them in a list. 
+Development done using MVC pattern, 
 
 ## Features
 
