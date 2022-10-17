@@ -99,6 +99,12 @@ extension SearchVC: UITextFieldDelegate{
 extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.getRecentSearchSrtings().count == 0 {
+            //check if there are recent search available showing message as "No recent Search, Search Now :)"
+            collectionView.setEmptyMessage("No recent Search, Search Now :)")
+        } else {
+            collectionView.restore()
+        }
         return getRecentSearchSrtings().count
     }
     
