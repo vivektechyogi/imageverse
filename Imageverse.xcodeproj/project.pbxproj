@@ -76,15 +76,14 @@
 		320AA9FF28FC16B700EC7C8A /* Imageverse */ = {
 			isa = PBXGroup;
 			children = (
-				320AAA0E28FC16BC00EC7C8A /* Info.plist */,
+				320AAA1E28FC19F800EC7C8A /* ui */,
+				320AAA1C28FC19DB00EC7C8A /* views */,
+				320AAA1B28FC19C700EC7C8A /* model */,
+				320AAA1D28FC19E000EC7C8A /* viewcontroller */,
 				320AAA2128FC1A3500EC7C8A /* supporting files */,
 				320AAA2028FC1A2B00EC7C8A /* delegates */,
 				320AAA1F28FC1A0800EC7C8A /* resources */,
-				320AAA1E28FC19F800EC7C8A /* ui */,
-				320AAA1D28FC19E000EC7C8A /* viewcontroller */,
-				320AAA1C28FC19DB00EC7C8A /* views */,
-				320AAA1B28FC19C700EC7C8A /* model */,
-				32B17EC828FC6A4B00482C4F /* extension.swift */,
+				320AAA0E28FC16BC00EC7C8A /* Info.plist */,
 			);
 			path = Imageverse;
 			sourceTree = "<group>";
@@ -147,6 +146,7 @@
 			children = (
 				32B17EC628FC439200482C4F /* APIManager.swift */,
 				32B17ECE28FD49AB00482C4F /* Reachability.swift */,
+				32B17EC828FC6A4B00482C4F /* extension.swift */,
 			);
 			path = "supporting files";
 			sourceTree = "<group>";
