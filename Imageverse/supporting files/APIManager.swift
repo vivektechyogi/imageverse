@@ -17,22 +17,22 @@ public class APIManager: NSObject {
     public static let session = Session(eventMonitors: [ AlamofireLogger() ])
     
     static let headers: HTTPHeaders = [
-                                "Content-Type" : "application/json",
-                                "Accept" : "*/*",
-                                "Authorization" : "Client-ID 01cb99b219f888a"
+        "Content-Type" : "application/json",
+        "Accept" : "*/*",
+        "Authorization" : "Client-ID f0529cb8b324cd8"//01cb99b219f888a"
     ]
     
     
     //MARK: Get Images
     public static func getImgaesForSearch(text: String) -> DataRequest{
-
+        
         let parameters: [String: String] = [
             "q": text
         ]
         return session.request(URLS.SEARCH_IMAGE, method:.get, parameters:parameters, encoding: URLEncoding.queryString , headers: headers)
     }
     
-
+    
 }
 
 // Class to Log Request Response

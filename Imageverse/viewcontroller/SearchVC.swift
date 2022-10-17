@@ -12,6 +12,7 @@ class SearchVC: BaseVC {
     //MARK: Outlets
     @IBOutlet weak var mainBackView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchView: UIView!
     
     @IBOutlet weak var recentSearchCollectionView: UICollectionView!
     //this callback will be used as trigger then user enter some text and click search button
@@ -26,11 +27,20 @@ class SearchVC: BaseVC {
         recentSearchCollectionView.collectionViewLayout = columnLayout
         recentSearchCollectionView.contentInsetAdjustmentBehavior = .always
         searchTextField.text = ""
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         mainBackView.roundCorners(8)
+        searchView.setBorder(radius: 25, color: .white)
         searchTextField.becomeFirstResponder()
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     
@@ -39,6 +49,7 @@ class SearchVC: BaseVC {
     @IBAction func searchButtonClicked(_ sender: Any) {
         let text = searchTextField.text ?? ""
         if text == ""{
+            self.showAlert(title: "", message: "Kindly enter text to search")
             return
         }
         addToRecentSearc()
@@ -80,7 +91,7 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChipCell", for: indexPath) as! ChipCell
         cell.titleLabel.text = getRecentSearchSrtings()[indexPath.row]
         cell.titleLabel.setBorder(radius: 15,color: .white, width: 3)
-            return cell
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -92,14 +103,14 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let string = getRecentSearchSrtings()[indexPath.row]
-
+        
         // your label font.
         let font = UIFont.systemFont(ofSize: 16)
         let fontAttribute = [NSAttributedString.Key.font: font]
-
+        
         // to get the exact width for label according to ur label font and Text.
         let size = string.size(withAttributes: fontAttribute)
-
+        
         // some extraSpace give if like so.
         let extraSpace : CGFloat = 44
         let width = size.width + extraSpace

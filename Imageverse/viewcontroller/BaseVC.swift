@@ -8,12 +8,12 @@
 import UIKit
 
 class BaseVC: UIViewController {
-
+    
     var activityView: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -23,25 +23,18 @@ class BaseVC: UIViewController {
         self.view.addSubview(activityView!)
         activityView?.startAnimating()
     }
-
+    
     func hideActivityIndicator(){
         if (activityView != nil){
             activityView?.stopAnimating()
         }
     }
     
-    func showAlert(title: String?,
-                   message: String?,
-                   actionTitles: [String?],
-                   style: [UIAlertAction.Style],
-                   actions: [((UIAlertAction) -> Void)?],
-                   preferredActionIndex: Int? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        for (index, title) in actionTitles.enumerated() {
-            let action = UIAlertAction(title: title, style: style[index], handler: actions[index])
-            alert.addAction(action)
+    func showAlert(title: String?, message: String?) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            let alert = UIAlertController(title: title ?? "", message: message ?? "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        if let preferredActionIndex = preferredActionIndex { alert.preferredAction = alert.actions[preferredActionIndex] }
-        self.present(alert, animated: true, completion: nil)
     }
 }

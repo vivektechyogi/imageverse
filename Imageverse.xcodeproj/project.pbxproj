@@ -22,6 +22,7 @@
 		32B17EC928FC6A4B00482C4F /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17EC828FC6A4B00482C4F /* extension.swift */; };
 		32B17ECB28FC7A3600482C4F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17ECA28FC7A3600482C4F /* BaseVC.swift */; };
 		32B17ECD28FC7D6800482C4F /* ChipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17ECC28FC7D6800482C4F /* ChipCell.swift */; };
+		32B17ECF28FD49AB00482C4F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17ECE28FD49AB00482C4F /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		32B17EC828FC6A4B00482C4F /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		32B17ECA28FC7A3600482C4F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		32B17ECC28FC7D6800482C4F /* ChipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipCell.swift; sourceTree = "<group>"; };
+		32B17ECE28FD49AB00482C4F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				32B17EC628FC439200482C4F /* APIManager.swift */,
+				32B17ECE28FD49AB00482C4F /* Reachability.swift */,
 			);
 			path = "supporting files";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				32B17EC528FC400F00482C4F /* ImageDataModel.swift in Sources */,
 				32B17ECB28FC7A3600482C4F /* BaseVC.swift in Sources */,
 				320AAA0128FC16B700EC7C8A /* AppDelegate.swift in Sources */,
+				32B17ECF28FD49AB00482C4F /* Reachability.swift in Sources */,
 				320AAA0328FC16B700EC7C8A /* SceneDelegate.swift in Sources */,
 				32B17EC728FC439200482C4F /* APIManager.swift in Sources */,
 				32B17EC928FC6A4B00482C4F /* extension.swift in Sources */,

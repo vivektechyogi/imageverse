@@ -12,7 +12,7 @@ struct ImageDataModel: Codable {
     let data: [ImageData]?
     let success: Bool?
     let status: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case data = "data"
         case success = "success"
@@ -25,7 +25,7 @@ struct ImageData: Codable {
     let id: String?
     let title: String?
     let datumDescription: String?
-    let datetime: Int?
+    let datetime: Double?
     let cover: String?
     let coverWidth: Int?
     let coverHeight: Int?
@@ -52,7 +52,7 @@ struct ImageData: Codable {
     let inMostViral: Bool?
     let includeAlbumAds: Bool?
     let images: [Image]?
-
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case title = "title"
@@ -118,7 +118,7 @@ struct Image: Codable {
     let downs: String?
     let points: String?
     let score: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case title = "title"
