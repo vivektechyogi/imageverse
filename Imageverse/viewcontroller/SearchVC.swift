@@ -22,6 +22,7 @@ class SearchVC: BaseVC {
     //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.delegate = self
         recentSearchCollectionView.delegate = self
         recentSearchCollectionView.dataSource = self
         recentSearchCollectionView.collectionViewLayout = columnLayout
@@ -44,9 +45,17 @@ class SearchVC: BaseVC {
     
     
     //MARK: ButtonActions
+    
+    @IBAction func searchButtonClicked(_ sender: Any) {
+        dismissViewAndTriggerCallback()
+    }
+    
+    
+    //MARK: Utiity Function
+    
     //on click of search button we trigger callback fucntion which then allow us to get image for user entered query
     //store same string in user preference
-    @IBAction func searchButtonClicked(_ sender: Any) {
+    func dismissViewAndTriggerCallback(){
         let text = searchTextField.text ?? ""
         if text == ""{
             self.showAlert(title: "", message: "Kindly enter text to search")
@@ -59,8 +68,6 @@ class SearchVC: BaseVC {
         self.dismiss(animated: true)
     }
     
-    
-    //MARK: Utiity Function
     let defaults = UserDefaults.standard
     //storing user search history in user default and using same to list out helps user for fast search
     func getRecentSearchSrtings()->[String]{
@@ -76,6 +83,15 @@ class SearchVC: BaseVC {
         recentSearchCollectionView.reloadData()
     }
     
+}
+
+//MARK: Textfield delegate
+extension SearchVC: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
+        dismissViewAndTriggerCallback()
+        return false
+    }
 }
 
 
