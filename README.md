@@ -25,7 +25,7 @@ Development done using MVC pattern
 
 
 # App Walkthrough
-![walkthrough gif](https://github.com/vivektechyogi/OutPuts/blob/main/Imageverse/walkthrough.gif)
+<img src="https://github.com/vivektechyogi/OutPuts/blob/main/Imageverse/walkthrough.gif" height="450" width="200" >
 
 # App Screens
 ![Alt text](https://github.com/vivektechyogi/OutPuts/blob/main/Imageverse/Screen.png "App Icon")
