@@ -13,7 +13,6 @@
 		320AAA0828FC16B700EC7C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320AAA0628FC16B700EC7C8A /* Main.storyboard */; };
 		320AAA0A28FC16BC00EC7C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320AAA0928FC16BC00EC7C8A /* Assets.xcassets */; };
 		320AAA0D28FC16BC00EC7C8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320AAA0B28FC16BC00EC7C8A /* LaunchScreen.storyboard */; };
-		32B17EBB28FC287700482C4F /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17EBA28FC287700482C4F /* ImageCell.swift */; };
 		32B17EBE28FC2B4E00482C4F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 32B17EBD28FC2B4E00482C4F /* Kingfisher */; };
 		32B17EC128FC2B6700482C4F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32B17EC028FC2B6700482C4F /* Alamofire */; };
 		32B17EC328FC3A7900482C4F /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17EC228FC3A7900482C4F /* SearchVC.swift */; };
@@ -23,6 +22,7 @@
 		32B17ECB28FC7A3600482C4F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17ECA28FC7A3600482C4F /* BaseVC.swift */; };
 		32B17ECD28FC7D6800482C4F /* ChipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17ECC28FC7D6800482C4F /* ChipCell.swift */; };
 		32B17ECF28FD49AB00482C4F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B17ECE28FD49AB00482C4F /* Reachability.swift */; };
+		32F5D2CF290159A50083F76F /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F5D2CE290159A50083F76F /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,6 @@
 		320AAA0928FC16BC00EC7C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		320AAA0C28FC16BC00EC7C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		320AAA0E28FC16BC00EC7C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32B17EBA28FC287700482C4F /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = ../../../../Documents/ImageCell.swift; sourceTree = "<group>"; };
 		32B17EC228FC3A7900482C4F /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		32B17EC428FC400F00482C4F /* ImageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataModel.swift; sourceTree = "<group>"; };
 		32B17EC628FC439200482C4F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		32B17ECA28FC7A3600482C4F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		32B17ECC28FC7D6800482C4F /* ChipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipCell.swift; sourceTree = "<group>"; };
 		32B17ECE28FD49AB00482C4F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		32F5D2CE290159A50083F76F /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 		320AAA1C28FC19DB00EC7C8A /* views */ = {
 			isa = PBXGroup;
 			children = (
-				32B17EBA28FC287700482C4F /* ImageCell.swift */,
+				32F5D2CE290159A50083F76F /* ImageCell.swift */,
 				32B17ECC28FC7D6800482C4F /* ChipCell.swift */,
 			);
 			path = views;
@@ -230,11 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B17EBB28FC287700482C4F /* ImageCell.swift in Sources */,
 				32B17EC328FC3A7900482C4F /* SearchVC.swift in Sources */,
 				320AAA0528FC16B700EC7C8A /* ImageListVC.swift in Sources */,
 				32B17ECD28FC7D6800482C4F /* ChipCell.swift in Sources */,
 				32B17EC528FC400F00482C4F /* ImageDataModel.swift in Sources */,
+				32F5D2CF290159A50083F76F /* ImageCell.swift in Sources */,
 				32B17ECB28FC7A3600482C4F /* BaseVC.swift in Sources */,
 				320AAA0128FC16B700EC7C8A /* AppDelegate.swift in Sources */,
 				32B17ECF28FD49AB00482C4F /* Reachability.swift in Sources */,
